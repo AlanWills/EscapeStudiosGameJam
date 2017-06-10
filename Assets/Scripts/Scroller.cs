@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class SidewaysScroller : MonoBehaviour
+public class Scroller : MonoBehaviour
 {
-    public float Speed;
+    public Vector2 Speed;
     private Rigidbody2D objectRigidBody;
 
 	// Use this for initialization
 	void Start ()
     {
         objectRigidBody = GetComponent<Rigidbody2D>();
-        objectRigidBody.velocity = new Vector2(Speed, 0);
+        objectRigidBody.velocity = Speed;
 	}
 	
 	// Update is called once per frame
