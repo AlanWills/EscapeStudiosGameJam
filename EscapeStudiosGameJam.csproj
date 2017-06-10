@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\CustomSteps\SetTriggerCustomStep.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetVolume.cs" />
     <Compile Include="Assets\Scripts\FireAtObject.cs" />
+    <Compile Include="Assets\Scripts\LeftRightController.cs" />
     <Compile Include="Assets\Scripts\RunnerController.cs" />
     <Compile Include="Assets\Scripts\Scroller.cs" />
     <Compile Include="Assets\Scripts\SetAnimatorTriggerOnStart.cs" />
