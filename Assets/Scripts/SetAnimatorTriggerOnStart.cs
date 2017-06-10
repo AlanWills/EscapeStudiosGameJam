@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class SetAnimatorTrigger : MonoBehaviour
+public class SetAnimatorTriggerOnStart : MonoBehaviour
 {
     public string TriggerName;
 
