@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(TransitionToSceneScript))]
 public abstract class ConditionScript : MonoBehaviour
 {
+    public bool Reversed = false;
     private GameObject correctSymbol;
     private TransitionToSceneScript transitionScript;
 
@@ -19,8 +20,21 @@ public abstract class ConditionScript : MonoBehaviour
         Debug.Assert(transitionScript != null, "Transition script null");
         transitionScript.enabled = false;
     }
+
+    public virtual void Update()
+    {
+        bool isConditionSatisfied = Condition();
+        if (isConditionSatisfied != Reversed)
+        {
+            // This means that if we're not reversed the condition is satisfied
+            // If we are reversed the condition is not satisfied, so actually IS satisfied!
+            Correct();
+        }
+    }
+
+    protected abstract bool Condition();
 	
-    protected void Correct()
+    private void Correct()
     {
         correctSymbol.SetActive(true);
         transitionScript.enabled = true;

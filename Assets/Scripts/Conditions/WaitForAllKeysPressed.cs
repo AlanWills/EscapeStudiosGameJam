@@ -13,8 +13,10 @@ public class WaitForAllKeysPressed : ConditionScript
     private bool downDown = false;
 
     // Update is called once per frame
-    void Update ()
+    public override void Update ()
     {
+        base.Update();
+
         //currentTimer += Time.deltaTime;
         //if (currentTimer < KeyPressBuffer)
         {
@@ -24,11 +26,6 @@ public class WaitForAllKeysPressed : ConditionScript
             downDown = downDown || Input.GetKeyDown(KeyCode.DownArrow) || (Input.GetAxis("Down") > 0);
 
             //DebugPrint();
-
-            if (AllDown())
-            {
-                Correct();
-            }
         }
 
         //Flush();
@@ -42,7 +39,7 @@ public class WaitForAllKeysPressed : ConditionScript
         if (downDown) { print("Down down"); }
     }
 
-    private bool AllDown()
+    protected override bool Condition()
     {
         return leftDown && upDown && rightDown && downDown;
     }

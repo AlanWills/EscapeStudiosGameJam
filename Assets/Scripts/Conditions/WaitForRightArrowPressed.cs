@@ -1,17 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WaitForRightArrowPressed : ConditionScript
 {
-    // Update is called once per frame
-    void Update ()
+    protected override bool Condition()
     {
-        if (!Input.GetKey(KeyCode.RightArrow))
-        {
-            return;
-        }
-
-        Correct();
-    }   
+        return Input.GetKeyDown(KeyCode.RightArrow);
+    }
 }
