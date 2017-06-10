@@ -10,6 +10,8 @@ public class FireAtObject : MonoBehaviour
     public List<CustomStep> CustomSteps = new List<CustomStep>();
     public List<BulletFirer> Firers = new List<BulletFirer>();
     public KeyCode KeyToTrigger;
+
+    private bool alive = true;
     
 	// Update is called once per frame
 	void Update ()
@@ -35,7 +37,11 @@ public class FireAtObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        GetComponentInChildren<Animator>().SetTrigger("die");
+        if (alive)
+        {
+            alive = false;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponentInChildren<Animator>().SetTrigger("die");
+        }
     }
 }
