@@ -75,15 +75,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\BulletFirer.cs" />
     <Compile Include="Assets\Scripts\Conditions\ConditionScript.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForCollision.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForKeysPressed.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\ActivateBehaviour.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\CustomStep.cs" />
+    <Compile Include="Assets\Scripts\CustomSteps\HideGameObject.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetTriggerCustomStep.cs" />
+    <Compile Include="Assets\Scripts\FireAtObject.cs" />
     <Compile Include="Assets\Scripts\RunnerController.cs" />
+    <Compile Include="Assets\Scripts\Scroller.cs" />
     <Compile Include="Assets\Scripts\SetAnimatorTriggerOnStart.cs" />
-    <Compile Include="Assets\Scripts\SidewaysScroller.cs" />
     <Compile Include="Assets\Scripts\SingleObjectChooser.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TransitionToSceneScript.cs" />
