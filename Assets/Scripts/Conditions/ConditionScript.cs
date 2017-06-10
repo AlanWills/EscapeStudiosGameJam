@@ -10,7 +10,7 @@ public abstract class ConditionScript : MonoBehaviour
     private TransitionToSceneScript transitionScript;
 
 	// Use this for initialization
-	void Start()
+	public virtual void Start()
     {
         correctSymbol = GameObject.Find("CorrectSymbol");
         Debug.Assert(correctSymbol != null, "Correct symbol null");

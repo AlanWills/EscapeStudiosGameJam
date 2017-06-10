@@ -8,8 +8,10 @@ public class WaitForKeysPressed : ConditionScript
 
     private Dictionary<KeyCode, bool> keysPressed = new Dictionary<KeyCode, bool>();
 
-    public WaitForKeysPressed()
+    public override void Start()
     {
+        base.Start();
+
         foreach (KeyCode key in Keys)
         {
             keysPressed.Add(key, false);
