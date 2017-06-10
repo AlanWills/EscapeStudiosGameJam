@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Conditions\WaitForAllKeysPressed.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForRightArrowPressed.cs" />
     <Compile Include="Assets\Scripts\RunnerController.cs" />
+    <Compile Include="Assets\Scripts\SidewaysScroller.cs" />
     <Compile Include="Assets\Scripts\TransitionToSceneScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
