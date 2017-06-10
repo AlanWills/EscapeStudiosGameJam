@@ -13,10 +13,8 @@ public class CorrectBrainSequencePressed : ConditionScript
     bool leftPressed = false;
     bool downPressed = false;
 
-    public override void Start()
+    void Start()
     {
-        base.Start();
-
         brainAnimator = GetComponent<Animator>();
     }
 
