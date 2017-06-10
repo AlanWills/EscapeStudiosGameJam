@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\BulletFirer.cs" />
+    <Compile Include="Assets\Scripts\ChickenController.cs" />
     <Compile Include="Assets\Scripts\Conditions\ConditionScript.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForCollision.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForKeysPressed.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\SingleObjectChooser.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TransitionToSceneScript.cs" />
+    <Compile Include="Assets\Scripts\VehicleController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
