@@ -9,6 +9,7 @@ public abstract class ConditionScript : MonoBehaviour
 
     public bool Reversed = false;
     private GameObject correctSymbol;
+    private GameObject incorrectSymbol;
     private TransitionToSceneScript transitionScript;
 
 	// Use this for initialization
@@ -17,6 +18,10 @@ public abstract class ConditionScript : MonoBehaviour
         correctSymbol = GameObject.Find("CorrectSymbol");
         Debug.Assert(correctSymbol != null, "Correct symbol null");
         correctSymbol.SetActive(false);
+
+        incorrectSymbol = GameObject.Find("IncorrectSymbol");
+        Debug.Assert(incorrectSymbol != null, "Incorrect symbol null");
+        incorrectSymbol.SetActive(false);
 
         transitionScript = GetComponent<TransitionToSceneScript>();
         Debug.Assert(transitionScript != null, "Transition script null");
@@ -45,6 +50,18 @@ public abstract class ConditionScript : MonoBehaviour
         foreach (CustomStep customStep in OptionalCustomSteps)
         {
             customStep.OnSuccess();
+        }
+    }
+
+    public void Incorrect()
+    {
+        incorrectSymbol.SetActive(true);
+        transitionScript.enabled = true;
+        enabled = false;
+
+        foreach (CustomStep customStep in OptionalCustomSteps)
+        {
+            customStep.OnFailure();
         }
     }
 }

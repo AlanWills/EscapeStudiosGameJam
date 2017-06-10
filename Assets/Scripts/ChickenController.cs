@@ -54,7 +54,9 @@ public class ChickenController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collidable")
         {
-            gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            // Turn off visuals and collisions
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
             DeathParticleSystem.Emit(31);
         }
     }
