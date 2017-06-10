@@ -24,5 +24,6 @@ public abstract class ConditionScript : MonoBehaviour
     {
         correctSymbol.SetActive(true);
         transitionScript.enabled = true;
+        enabled = false;
     }
 }
