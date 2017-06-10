@@ -7,7 +7,7 @@ public class TransitionToSceneScript : MonoBehaviour
 {
     public Animator WipeAnimator;
     public string SceneName;
-    public float Countdown = 1.5f;
+    public float Countdown = 1;
     public float WipeCountdown = 1;
     public string AxisToTrigger;
 
