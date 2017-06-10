@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransitionToSceneScript : MonoBehaviour {
 
     public string SceneName;
-    public float Countdown = -1;
+    public float Countdown = 1.5f;
     public string AxisToTrigger;
 
     private float currentTime = 0;

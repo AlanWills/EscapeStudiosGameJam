@@ -42,6 +42,10 @@ public class RunnerController : MonoBehaviour
         {
             SceneManager.LoadScene("RunningManLevel");
         }
+        else
+        {
+            runnerAnimator.SetTrigger("idle");
+        }
     }
 
     private void SetUp()
