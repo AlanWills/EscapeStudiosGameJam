@@ -7,12 +7,8 @@ using UnityEngine;
 public class HideGameObject : CustomStep
 {
     public GameObject GameObjectToHide;
-
-    public override void OnFailure()
-    {
-    }
-
-    public override void OnSuccess()
+    
+    public override void DoStep()
     {
         GameObjectToHide.SetActive(false);
     }

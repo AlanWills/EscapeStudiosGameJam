@@ -6,6 +6,5 @@ using UnityEngine;
 
 public abstract class CustomStep : MonoBehaviour
 {
-    public abstract void OnSuccess();
-    public abstract void OnFailure();
+    public abstract void DoStep();
 }

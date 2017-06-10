@@ -8,12 +8,8 @@ public class SetVolume : CustomStep
     public float Volume;
     public AudioSource AudioSource;
 
-    public override void OnSuccess()
+    public override void DoStep()
     {
         AudioSource.volume = Volume;
-    }
-
-    public override void OnFailure()
-    {
     }
 }

@@ -9,12 +9,8 @@ public class SetTriggerCustomStep : CustomStep
     public string TriggerOnSuccess;
     public Animator Animator;
     
-    public override void OnSuccess()
+    public override void DoStep()
     {
         Animator.SetTrigger(TriggerOnSuccess);
-    }
-
-    public override void OnFailure()
-    {
     }
 }

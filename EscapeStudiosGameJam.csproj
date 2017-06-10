@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Conditions\WaitForTrigger.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\ActivateBehaviour.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\CustomStep.cs" />
+    <Compile Include="Assets\Scripts\CustomSteps\CustomStepPlayer.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\HideGameObject.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\PlayAudio.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetTriggerCustomStep.cs" />

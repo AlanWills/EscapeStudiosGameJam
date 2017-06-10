@@ -26,7 +26,7 @@ public class FireAtObject : MonoBehaviour
     {
         foreach (CustomStep step in CustomSteps)
         {
-            step.OnSuccess();
+            step.DoStep();
         }
 
         foreach (BulletFirer firer in Firers)

@@ -5,13 +5,9 @@ using UnityEngine;
 public class PlayAudio : CustomStep
 {
     public AudioSource AudioSource;
-    
-    public override void OnSuccess()
+
+    public override void DoStep()
     {
         AudioSource.Play();
-    }
-
-    public override void OnFailure()
-    {
     }
 }

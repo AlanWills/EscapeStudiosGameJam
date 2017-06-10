@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(TransitionToSceneScript))]
-public abstract class ConditionScript : MonoBehaviour
+public abstract class ConditionScript : CustomStepPlayer
 {
-    public List<CustomStep> OptionalCustomSteps = new List<CustomStep>();
-
     public bool Reversed = false;
     private GameObject correctSymbol;
     private GameObject incorrectSymbol;
@@ -49,19 +47,7 @@ public abstract class ConditionScript : MonoBehaviour
 
         foreach (CustomStep customStep in OptionalCustomSteps)
         {
-            customStep.OnSuccess();
-        }
-    }
-
-    public void Incorrect()
-    {
-        incorrectSymbol.SetActive(true);
-        transitionScript.enabled = true;
-        enabled = false;
-
-        foreach (CustomStep customStep in OptionalCustomSteps)
-        {
-            customStep.OnFailure();
+            customStep.DoStep();
         }
     }
 }

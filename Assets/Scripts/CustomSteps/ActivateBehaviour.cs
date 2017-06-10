@@ -6,12 +6,8 @@ using UnityEngine;
 public class ActivateBehaviour : CustomStep
 {
     public Behaviour Component;
-
-    public override void OnFailure()
-    {
-    }
-
-    public override void OnSuccess()
+    
+    public override void DoStep()
     {
         Component.enabled = true;
     }
