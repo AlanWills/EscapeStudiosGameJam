@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(TransitionToSceneScript))]
 public abstract class ConditionScript : MonoBehaviour
 {
+    public List<CustomStep> OptionalCustomSteps = new List<CustomStep>();
+
     public bool Reversed = false;
     private GameObject correctSymbol;
     private TransitionToSceneScript transitionScript;
@@ -40,8 +42,9 @@ public abstract class ConditionScript : MonoBehaviour
         transitionScript.enabled = true;
         enabled = false;
 
-        OnCorrect();
+        foreach (CustomStep customStep in OptionalCustomSteps)
+        {
+            customStep.OnSuccess();
+        }
     }
-
-    protected virtual void OnCorrect() { }
 }

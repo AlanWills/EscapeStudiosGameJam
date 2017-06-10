@@ -1,17 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
-public class WaitForKeysPressedWithAnimation : WaitForKeysPressed
+public class SetTriggerCustomStep : CustomStep
 {
     public string TriggerOnSuccess;
     
-    protected override void OnCorrect()
-    {
-        base.OnCorrect();
-
+    public override void OnSuccess()
+    { 
         gameObject.GetComponent<Animator>().SetTrigger(TriggerOnSuccess);
+    }
+
+    public override void OnFailure()
+    {
     }
 }
