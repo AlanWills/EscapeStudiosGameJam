@@ -89,7 +89,7 @@
     <Compile Include="Assets\Scripts\Conditions\ConditionScript.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForCollision.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForKeysPressed.cs" />
-    <Compile Include="Assets\Scripts\Conditions\WaitForKeysPressedWithSpriteSwap.cs" />
+    <Compile Include="Assets\Scripts\Conditions\WaitForKeysPressedWithAnimation.cs" />
     <Compile Include="Assets\Scripts\RunnerController.cs" />
     <Compile Include="Assets\Scripts\SidewaysScroller.cs" />
     <Compile Include="Assets\Scripts\SingleObjectChooser.cs" />
