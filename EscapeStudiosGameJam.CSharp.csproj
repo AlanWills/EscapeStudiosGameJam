@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Conditions\ConditionScript.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForCollision.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitForKeysPressed.cs" />
+    <Compile Include="Assets\Scripts\Conditions\WaitForTrigger.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\ActivateBehaviour.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\CustomStep.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\HideGameObject.cs" />
