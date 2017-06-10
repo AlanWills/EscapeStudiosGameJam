@@ -6,14 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(ParticleSystem))]
+[RequireComponent(typeof(AudioSource))]
 public class ChickenController : MonoBehaviour
 {
     public Vector2 Forward;
     public Vector2 Left;
     public GameObject chickenThoughts;
     public ParticleSystem DeathParticleSystem;
+    public AudioClip ChickenDeathSound;
 
     private Animator chickenAnimator;
+    private AudioSource chickenAudio;
     private bool moving = false;
     
     // Use this for initialization
@@ -21,6 +24,8 @@ public class ChickenController : MonoBehaviour
     {
         chickenAnimator = GetComponent<Animator>();
         chickenAnimator.SetTrigger("idle");
+
+        chickenAudio = GetComponent<AudioSource>();
 
         DeathParticleSystem.Stop();
 	}
@@ -58,6 +63,10 @@ public class ChickenController : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
             DeathParticleSystem.Emit(31);
+
+            chickenAudio.loop = false;
+            chickenAudio.clip = ChickenDeathSound;
+            chickenAudio.Play();
         }
     }
     
@@ -96,6 +105,7 @@ public class ChickenController : MonoBehaviour
             moving = true;
             chickenAnimator.SetTrigger("running");
             chickenThoughts.SetActive(false);
+            chickenAudio.Play();
         }
     }
 
@@ -105,6 +115,7 @@ public class ChickenController : MonoBehaviour
         {
             moving = false;
             chickenAnimator.SetTrigger("running");
+            chickenAudio.Stop();
         }
     }
 }
