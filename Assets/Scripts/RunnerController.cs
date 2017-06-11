@@ -6,6 +6,8 @@ public class RunnerController : MonoBehaviour
 {
     public GameObject step1;
     public GameObject step2; 
+    public GameObject flip;
+    public GameObject hurt;
     private enum Orientation
     {
         kUp,
@@ -32,6 +34,7 @@ public class RunnerController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             SetUp();
+
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -44,6 +47,8 @@ public class RunnerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collidable")
         {
+            GameObject audioInstance;
+            audioInstance = Instantiate(hurt, transform) as GameObject;
             SceneManager.LoadScene("RunningManLevel");
         }
         else
@@ -71,7 +76,12 @@ public class RunnerController : MonoBehaviour
 
             GetComponentInChildren<SpriteRenderer>().flipY = false;
             orientation = Orientation.kUp;
+
+            GameObject audioInstance;
+            audioInstance = Instantiate(flip, transform) as GameObject;
+
         }
+
     }
 
     private void SetDown()
@@ -93,7 +103,12 @@ public class RunnerController : MonoBehaviour
 
             GetComponentInChildren<SpriteRenderer>().flipY = true;
             orientation = Orientation.kDown;
+
+            GameObject audioInstance;
+            audioInstance = Instantiate(flip, transform) as GameObject;
+
         }
+
     }
 
     private void Step1(){
