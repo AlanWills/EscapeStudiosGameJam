@@ -78,8 +78,18 @@ public class TransitionToSceneScript : MonoBehaviour
         }
 
         transitioning = false;
-        string scene = ScenesLeft[0];
-        ScenesLeft.RemoveAt(0);
+
+        string scene = "";
+        if (ScenesLeft.Count == 0)
+        {
+            scene = "Complete";
+        }
+        else
+        {
+            scene = ScenesLeft[0];
+            ScenesLeft.RemoveAt(0);
+        }
+
         SceneManager.LoadScene(scene);
     }
 
