@@ -10,6 +10,8 @@ public class RunnerController : MonoBehaviour
         kDown
     }
 
+    public GameObject Background;
+
     private Animator runnerAnimator;
     private Orientation orientation = Orientation.kUp;
 
@@ -52,9 +54,19 @@ public class RunnerController : MonoBehaviour
     {
         if (orientation != Orientation.kUp)
         {
-            Vector3 localPosition = transform.localPosition;
-            localPosition.y *= -1;
-            transform.localPosition = localPosition;
+            // Scope to avoid setting variables incorrectly
+            {
+                Vector3 localPosition = transform.localPosition;
+                localPosition.y *= -1;
+                transform.localPosition = localPosition;
+            }
+
+            {
+                Vector3 backgroundPosition = Background.transform.localPosition;
+                backgroundPosition.y *= -1;
+                Background.transform.localPosition = backgroundPosition;
+            }
+
             GetComponentInChildren<SpriteRenderer>().flipY = false;
             orientation = Orientation.kUp;
         }
@@ -64,9 +76,19 @@ public class RunnerController : MonoBehaviour
     {
         if (orientation != Orientation.kDown)
         {
-            Vector3 localPosition = transform.localPosition;
-            localPosition.y *= -1;
-            transform.localPosition = localPosition;
+            // Scope to avoid setting variables incorrectly
+            {
+                Vector3 localPosition = transform.localPosition;
+                localPosition.y *= -1;
+                transform.localPosition = localPosition;
+            }
+
+            {
+                Vector3 backgroundPosition = Background.transform.localPosition;
+                backgroundPosition.y *= -1;
+                Background.transform.localPosition = backgroundPosition;
+            }
+
             GetComponentInChildren<SpriteRenderer>().flipY = true;
             orientation = Orientation.kDown;
         }
