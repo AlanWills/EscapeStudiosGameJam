@@ -7,7 +7,8 @@ public class TransitionToSceneScript : MonoBehaviour
 {
     private static List<string> AvailableScenes = new List<string>()
     {
-        "BlackAndWhiteLevel",
+        "BlackAndWhiteWhiteCorrectLevel",
+        "BlackAndWhiteBlackCorrectLevel",
         "HappyLevel",
         "HotAndColdLevel",
         "LeftBrainRightBrainLevel",
