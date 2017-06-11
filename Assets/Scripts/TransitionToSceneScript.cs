@@ -17,22 +17,10 @@ public class TransitionToSceneScript : MonoBehaviour
         "RunningManLevel",
         "SadLevel",
         "WhyDidTheChickenLevel",
-        "WhyDidTheChickenSadLevel"
+        "WhyDidTheChickenSadLevel",
+        "AdjustContrastLevel"
     };
-    private static List<string> ScenesLeft = new List<string>()
-    {
-        "BlackAndWhiteLevel",
-        "HappyLevel",
-        "HotAndColdLevel",
-        "LeftBrainRightBrainLevel",
-        "PlanesAndSubsOneColourLevel",
-        "PressAllKeysLevel",
-        "PressNoKeysLevel",
-        "RunningManLevel",
-        "SadLevel",
-        "WhyDidTheChickenLevel",
-        "WhyDidTheChickenSadLevel"
-    };
+    private static List<string> ScenesLeft = new List<string>(AvailableScenes);
 
     public Animator WipeAnimator;
     public float Countdown = 1;
