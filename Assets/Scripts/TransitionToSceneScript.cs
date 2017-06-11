@@ -8,21 +8,22 @@ public class TransitionToSceneScript : MonoBehaviour
     private static List<string> AvailableScenes = new List<string>()
     {
         "BlackAndWhiteWhiteCorrectLevel",
-        //"BlackAndWhiteBlackCorrectLevel",
-        //"HappyLevel",
-        //"HotAndColdBurningLevel",
-        //"HotAndColdFrozenLevel",
-        //"LeftBrainRightBrainLevel",
-        //"PlanesAndSubsOneColourLevel",
-        //"PressAllKeysLevel",
+        "BlackAndWhiteBlackCorrectLevel",
+        "HappyLevel",
+        "HotAndColdBurningLevel",
+        "HotAndColdFrozenLevel",
+        "LeftBrainRightBrainLevel",
+        "PlanesAndSubsOneColourLevel",
+        "PressAllKeysLevel",
         //"PressNoKeysLevel",
-        //"RunningManLevel",
-        //"SadLevel",
+        "RunningManLevel",
+        "SadLevel",
         "WhyDidTheChickenLevel",
+        //"PlanesAndSubsTwoColoursLevel",
         //"WhyDidTheChickenSadLevel",
-        //"AdjustContrastLevel"
+        "AdjustContrastLevel"
     };
-    private static List<string> ScenesLeft = new List<string>(AvailableScenes);
+    public static List<string> ScenesLeft = new List<string>(AvailableScenes);
     private static string currentLevelName;
 
     public Animator WipeAnimator;
