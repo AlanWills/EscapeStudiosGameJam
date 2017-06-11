@@ -7,10 +7,10 @@ public class TransitionToSceneScript : MonoBehaviour
 {
     private static List<string> AvailableScenes = new List<string>()
     {
+        "HotAndColdLevel",
         "BlackAndWhiteWhiteCorrectLevel",
         "BlackAndWhiteBlackCorrectLevel",
         "HappyLevel",
-        "HotAndColdLevel",
         "LeftBrainRightBrainLevel",
         "PlanesAndSubsOneColourLevel",
         "PressAllKeysLevel",
@@ -22,6 +22,7 @@ public class TransitionToSceneScript : MonoBehaviour
         "AdjustContrastLevel"
     };
     private static List<string> ScenesLeft = new List<string>(AvailableScenes);
+    private static string currentLevelName;
 
     public Animator WipeAnimator;
     public float Countdown = 1;
@@ -68,18 +69,17 @@ public class TransitionToSceneScript : MonoBehaviour
 
         transitioning = false;
 
-        string scene = "";
         if (ScenesLeft.Count == 0)
         {
-            scene = "Complete";
+            currentLevelName = "Complete";
         }
         else
         {
-            scene = ScenesLeft[0];
+            currentLevelName = ScenesLeft[0];
             ScenesLeft.RemoveAt(0);
         }
 
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(currentLevelName);
     }
 
     public void Transition()
@@ -89,17 +89,7 @@ public class TransitionToSceneScript : MonoBehaviour
 
     public static void RandomizeScenes()
     {
-        int n = AvailableScenes.Count;
-        while (n > 1)
-        {
-            n--;
-            int k = Random.Range(0, n + 1);
-            string value = AvailableScenes[k];
-            AvailableScenes[k] = AvailableScenes[n];
-            AvailableScenes[n] = value;
-        }
-
-        ScenesLeft.Clear();
-        ScenesLeft.AddRange(AvailableScenes);
+        // Pushes the current scene to the buck of the ScenesLeft list.
+        ScenesLeft.Add(currentLevelName);
     }
 }
