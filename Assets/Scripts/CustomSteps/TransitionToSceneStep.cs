@@ -9,6 +9,6 @@ public class TransitionToSceneStep : CustomStep
 
     public override void DoStep()
     {
-        TransitionScript.Transition();
+        CheckForTransitioner.Transition();
     }
 }
