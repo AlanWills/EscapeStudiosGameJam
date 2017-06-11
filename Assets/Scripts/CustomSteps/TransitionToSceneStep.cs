@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TransitionToSceneStep : CustomStep
 {
-    public TransitionToSceneScript TransitionScript;
+    public TransitionToSceneScript Transitioner;
 
     public override void DoStep()
     {
-        CheckForTransitioner.Transition();
+        Transitioner.Transition();
     }
 }

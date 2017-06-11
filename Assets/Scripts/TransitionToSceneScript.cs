@@ -19,7 +19,20 @@ public class TransitionToSceneScript : MonoBehaviour
         "WhyDidTheChickenLevel",
         "WhyDidTheChickenSadLevel"
     };
-    private static Queue<string> currentSceneQueue = new Queue<string>();
+    private static List<string> ScenesLeft = new List<string>()
+    {
+        "BlackAndWhiteLevel",
+        "HappyLevel",
+        "HotAndColdLevel",
+        "LeftBrainRightBrainLevel",
+        "PlanesAndSubsOneColourLevel",
+        "PressAllKeysLevel",
+        "PressNoKeysLevel",
+        "RunningManLevel",
+        "SadLevel",
+        "WhyDidTheChickenLevel",
+        "WhyDidTheChickenSadLevel"
+    };
 
     public Animator WipeAnimator;
     public float Countdown = 1;
@@ -31,7 +44,8 @@ public class TransitionToSceneScript : MonoBehaviour
     private bool transitioning = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
@@ -63,8 +77,10 @@ public class TransitionToSceneScript : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(currentSceneQueue.Dequeue());
-        enabled = false;
+        transitioning = false;
+        string scene = ScenesLeft[0];
+        ScenesLeft.RemoveAt(0);
+        SceneManager.LoadScene(scene);
     }
 
     public void Transition()
@@ -84,9 +100,7 @@ public class TransitionToSceneScript : MonoBehaviour
             AvailableScenes[n] = value;
         }
 
-        foreach (string scene in AvailableScenes)
-        {
-            currentSceneQueue.Enqueue(scene);
-        }
+        ScenesLeft.Clear();
+        ScenesLeft.AddRange(AvailableScenes);
     }
 }
