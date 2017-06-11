@@ -5,8 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TransitionToSceneScript : MonoBehaviour
 {
-    public static List<string> AvailableScenes = new List<string>();
-
+    private static List<string> AvailableScenes = new List<string>()
+    {
+        "BlackAndWhiteLevel",
+        "HappyLevel",
+        "HotAndColdLevel",
+        "LeftBrainRightBrainLevel",
+        "PlanesAndSubsOneColourLevel",
+        "PressAllKeysLevel",
+        "PressNoKeysLevel",
+        "RunningManLevel",
+        "SadLevel",
+        "WhyDidTheChickenLevel",
+        "WhyDidTheChickenSadLevel"
+    };
     private static Queue<string> currentSceneQueue = new Queue<string>();
 
     public Animator WipeAnimator;
@@ -16,6 +28,7 @@ public class TransitionToSceneScript : MonoBehaviour
     private float countdownTimer = 0;
     private float wipeTimer = 0;
     private bool wiping = false;
+    private bool transitioning = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +38,11 @@ public class TransitionToSceneScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        
-	}
+        if (!transitioning)
+        {
+            return;
+        }
 
-    public void ForceTransition()
-    {
         countdownTimer += Time.deltaTime;
 
         if (countdownTimer < Countdown)
@@ -51,6 +64,12 @@ public class TransitionToSceneScript : MonoBehaviour
         }
 
         SceneManager.LoadScene(currentSceneQueue.Dequeue());
+        enabled = false;
+    }
+
+    public void Transition()
+    {
+        transitioning = true;
     }
 
     public static void RandomizeScenes()
