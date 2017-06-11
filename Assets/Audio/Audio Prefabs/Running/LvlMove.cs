@@ -20,7 +20,7 @@ public class LvlMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - lasttimeCheck > interval)
+/*		if (Time.time - lasttimeCheck > interval)
         {
             GameObject audioInstance;
             audioInstance = Instantiate(currentSound, transform) as GameObject;
@@ -34,6 +34,6 @@ public class LvlMove : MonoBehaviour {
                 soundId = 1;
                 currentSound = lvlMove1;
             }
-        }
+        } */
 	}
 }
