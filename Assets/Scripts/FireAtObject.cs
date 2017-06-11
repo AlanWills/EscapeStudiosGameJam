@@ -10,6 +10,8 @@ public class FireAtObject : MonoBehaviour
     public List<CustomStep> CustomSteps = new List<CustomStep>();
     public List<BulletFirer> Firers = new List<BulletFirer>();
     public KeyCode KeyToTrigger;
+    public Animator Animator;
+    public Rigidbody2D RigidBody;
 
     private bool alive = true;
     
@@ -40,8 +42,8 @@ public class FireAtObject : MonoBehaviour
         if (alive)
         {
             alive = false;
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponentInChildren<Animator>().SetTrigger("die");
+            RigidBody.velocity = Vector3.zero;
+            Animator.SetTrigger("die");
         }
     }
 }
