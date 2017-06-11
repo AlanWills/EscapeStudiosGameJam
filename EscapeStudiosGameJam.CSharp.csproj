@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayerOnKeyPress.cs" />
     <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayerOnTrigger.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\ActivateBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CustomSteps\AddHardLevel.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\CustomStep.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\DeactivateBehaviour.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\HideGameObject.cs" />
