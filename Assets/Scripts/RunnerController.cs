@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Animator))]
 public class RunnerController : MonoBehaviour
 {
+    public GameObject step1;
+    public GameObject step2; 
     private enum Orientation
     {
         kUp,
@@ -92,5 +94,15 @@ public class RunnerController : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().flipY = true;
             orientation = Orientation.kDown;
         }
+    }
+
+    private void Step1(){
+        GameObject audioInstance;
+        audioInstance = Instantiate(step1, transform) as GameObject;
+    }
+    private void Step2()
+    {
+        GameObject audioInstance;
+        audioInstance = Instantiate(step2, transform) as GameObject;
     }
 }
