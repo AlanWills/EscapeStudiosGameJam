@@ -82,7 +82,7 @@ public class TransitionToSceneScript : MonoBehaviour
         string scene = "";
         if (ScenesLeft.Count == 0)
         {
-            scene = "CompleteLevel";
+            scene = "Complete";
         }
         else
         {
