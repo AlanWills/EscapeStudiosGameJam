@@ -14,6 +14,7 @@ public class ChickenController : MonoBehaviour
     public GameObject chickenThoughts;
     public ParticleSystem DeathParticleSystem;
     public AudioClip ChickenDeathSound;
+    public WaitUntilTrue OptionalWait;
 
     private Animator chickenAnimator;
     private AudioSource chickenAudio;
@@ -67,6 +68,11 @@ public class ChickenController : MonoBehaviour
             chickenAudio.loop = false;
             chickenAudio.clip = ChickenDeathSound;
             chickenAudio.Play();
+
+            if (OptionalWait != null)
+            {
+                OptionalWait.IsTrue = true;
+            }
         }
     }
     
