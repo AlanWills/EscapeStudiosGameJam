@@ -8,30 +8,30 @@ public class TransitionToSceneScript : MonoBehaviour
     private static List<string> AvailableScenes = new List<string>()
     {
         "BlackAndWhiteLevel",
-        //"HappyLevel",
-        //"HotAndColdLevel",
-        //"LeftBrainRightBrainLevel",
+        "HappyLevel",
+        "HotAndColdLevel",
+        "LeftBrainRightBrainLevel",
         "PlanesAndSubsOneColourLevel",
-        //"PressAllKeysLevel",
-        //"PressNoKeysLevel",
-        //"RunningManLevel",
-        //"SadLevel",
-        //"WhyDidTheChickenLevel",
-        //"WhyDidTheChickenSadLevel"
+        "PressAllKeysLevel",
+        "PressNoKeysLevel",
+        "RunningManLevel",
+        "SadLevel",
+        "WhyDidTheChickenLevel",
+        "WhyDidTheChickenSadLevel"
     };
     private static List<string> ScenesLeft = new List<string>()
     {
         "BlackAndWhiteLevel",
-        //"HappyLevel",
-        //"HotAndColdLevel",
-        //"LeftBrainRightBrainLevel",
+        "HappyLevel",
+        "HotAndColdLevel",
+        "LeftBrainRightBrainLevel",
         "PlanesAndSubsOneColourLevel",
-        //"PressAllKeysLevel",
-        //"PressNoKeysLevel",
-        //"RunningManLevel",
-        //"SadLevel",
-        //"WhyDidTheChickenLevel",
-        //"WhyDidTheChickenSadLevel"
+        "PressAllKeysLevel",
+        "PressNoKeysLevel",
+        "RunningManLevel",
+        "SadLevel",
+        "WhyDidTheChickenLevel",
+        "WhyDidTheChickenSadLevel"
     };
 
     public Animator WipeAnimator;
@@ -78,8 +78,18 @@ public class TransitionToSceneScript : MonoBehaviour
         }
 
         transitioning = false;
-        string scene = ScenesLeft[0];
-        ScenesLeft.RemoveAt(0);
+
+        string scene = "";
+        if (ScenesLeft.Count == 0)
+        {
+            scene = "CompleteLevel";
+        }
+        else
+        {
+            scene = ScenesLeft[0];
+            ScenesLeft.RemoveAt(0);
+        }
+
         SceneManager.LoadScene(scene);
     }
 

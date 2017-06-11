@@ -46,7 +46,11 @@ public class RunnerController : MonoBehaviour
         {
             SceneManager.LoadScene("RunningManLevel");
         }
-        else
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Success")
         {
             runnerAnimator.SetTrigger("idle");
         }
