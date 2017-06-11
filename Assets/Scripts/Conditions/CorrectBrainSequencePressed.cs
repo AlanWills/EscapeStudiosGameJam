@@ -13,6 +13,9 @@ public class CorrectBrainSequencePressed : ConditionScript
     bool leftPressed = false;
     bool downPressed = false;
 
+    private float TimeBetweenPresses = 1;
+    private float currentTimer = 0;
+
     void Start()
     {
         brainAnimator = GetComponent<Animator>();
@@ -28,6 +31,13 @@ public class CorrectBrainSequencePressed : ConditionScript
             return;
         }
 
+        currentTimer += Time.deltaTime;
+        if (currentTimer < TimeBetweenPresses)
+        {
+            currentTimer += TimeBetweenPresses;
+            return;
+        }
+
         if (!upPressed)
         {
             // Nothing in the sequence is pressed
@@ -36,6 +46,7 @@ public class CorrectBrainSequencePressed : ConditionScript
             {
                 upPressed = true;
                 brainAnimator.SetTrigger("next");
+                currentTimer = 0;
             }
         }
         else if (!leftPressed)
@@ -46,11 +57,13 @@ public class CorrectBrainSequencePressed : ConditionScript
             {
                 leftPressed = true;
                 brainAnimator.SetTrigger("next");
+                currentTimer = 0;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 upPressed = false;
                 brainAnimator.SetTrigger("previous");
+                currentTimer = 0;
             }
         }
         else if (!downPressed)
@@ -62,11 +75,13 @@ public class CorrectBrainSequencePressed : ConditionScript
                 downPressed = true;
                 brainAnimator.SetTrigger("next");
                 PlayerAnimator.SetTrigger("clever");
+                currentTimer = 0;
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 leftPressed = false;
                 brainAnimator.SetTrigger("previous");
+                currentTimer = 0;
             }
         }
     }
