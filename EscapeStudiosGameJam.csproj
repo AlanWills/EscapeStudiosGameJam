@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -86,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Audio\Audio Prefabs\Running\LvlMove.cs" />
     <Compile Include="Assets\Scripts\ActivateAfterDelay.cs" />
     <Compile Include="Assets\Scripts\BrightnessContrast.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -106,12 +105,12 @@
     <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayerOnTrigger.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\ActivateBehaviour.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\CustomStep.cs" />
-    <Compile Include="Assets\Scripts\CustomSteps\ShowGameObject.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\HideGameObject.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\PlayAudio.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\RandomizeScenes.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetTriggerCustomStep.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetVolume.cs" />
+    <Compile Include="Assets\Scripts\CustomSteps\ShowGameObject.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\TransitionToSceneStep.cs" />
     <Compile Include="Assets\Scripts\DestroyAfter.cs" />
     <Compile Include="Assets\Scripts\DontDestroyObjectOnLoad.cs" />
