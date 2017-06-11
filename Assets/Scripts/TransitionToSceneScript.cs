@@ -19,6 +19,7 @@ public class TransitionToSceneScript : MonoBehaviour
         "RunningManLevel",
         "SadLevel",
         "WhyDidTheChickenLevel",
+        "GifJifLevel",
         //"PlanesAndSubsTwoColoursLevel",
         //"WhyDidTheChickenSadLevel",
         "AdjustContrastLevel"
