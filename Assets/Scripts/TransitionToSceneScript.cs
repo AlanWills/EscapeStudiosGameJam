@@ -8,19 +8,19 @@ public class TransitionToSceneScript : MonoBehaviour
     private static List<string> AvailableScenes = new List<string>()
     {
         "BlackAndWhiteWhiteCorrectLevel",
-        "BlackAndWhiteBlackCorrectLevel",
-        "HappyLevel",
-        "HotAndColdBurningLevel",
-        "HotAndColdFrozenLevel",
-        "LeftBrainRightBrainLevel",
-        "PlanesAndSubsOneColourLevel",
-        "PressAllKeysLevel",
-        "PressNoKeysLevel",
-        "RunningManLevel",
-        "SadLevel",
+        //"BlackAndWhiteBlackCorrectLevel",
+        //"HappyLevel",
+        //"HotAndColdBurningLevel",
+        //"HotAndColdFrozenLevel",
+        //"LeftBrainRightBrainLevel",
+        //"PlanesAndSubsOneColourLevel",
+        //"PressAllKeysLevel",
+        //"PressNoKeysLevel",
+        //"RunningManLevel",
+        //"SadLevel",
         "WhyDidTheChickenLevel",
-        "WhyDidTheChickenSadLevel",
-        "AdjustContrastLevel"
+        //"WhyDidTheChickenSadLevel",
+        //"AdjustContrastLevel"
     };
     private static List<string> ScenesLeft = new List<string>(AvailableScenes);
     private static string currentLevelName;
@@ -90,7 +90,10 @@ public class TransitionToSceneScript : MonoBehaviour
 
     public static void RandomizeScenes()
     {
-        // Pushes the current scene to the buck of the ScenesLeft list.
-        ScenesLeft.Add(currentLevelName);
+        if (!ScenesLeft.Contains(currentLevelName))
+        {
+            // Pushes the current scene to the back of the ScenesLeft list.
+            ScenesLeft.Add(currentLevelName);
+        }
     }
 }
