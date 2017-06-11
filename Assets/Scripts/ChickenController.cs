@@ -11,7 +11,6 @@ public class ChickenController : MonoBehaviour
 {
     public Vector2 Forward;
     public Vector2 Left;
-    public GameObject chickenThoughts;
     public ParticleSystem DeathParticleSystem;
     public AudioClip ChickenDeathSound;
     public WaitUntilTrue OptionalWait;
@@ -110,7 +109,6 @@ public class ChickenController : MonoBehaviour
         {
             moving = true;
             chickenAnimator.SetTrigger("running");
-            chickenThoughts.SetActive(false);
             chickenAudio.Play();
         }
     }
