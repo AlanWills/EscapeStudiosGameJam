@@ -91,6 +91,8 @@
     <Compile Include="Assets\Scripts\Conditions\WaitForTrigger.cs" />
     <Compile Include="Assets\Scripts\Conditions\WaitUntilTrue.cs" />
     <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayer.cs" />
+    <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayerOnCollision.cs" />
+    <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayerOnKeyPress.cs" />
     <Compile Include="Assets\Scripts\CustomStepPlayers\CustomStepPlayerOnTrigger.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\ActivateBehaviour.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\CustomStep.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\CustomSteps\RandomizeScenes.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetTriggerCustomStep.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\SetVolume.cs" />
+    <Compile Include="Assets\Scripts\CustomSteps\ShowGameObject.cs" />
     <Compile Include="Assets\Scripts\CustomSteps\TransitionToSceneStep.cs" />
     <Compile Include="Assets\Scripts\DestroyAfter.cs" />
     <Compile Include="Assets\Scripts\DontDestroyObjectOnLoad.cs" />
