@@ -49,6 +49,7 @@ public class RunnerController : MonoBehaviour
         {
             GameObject audioInstance;
             audioInstance = Instantiate(hurt, transform) as GameObject;
+            runnerAnimator.SetTrigger("die");
         }
     }
 
